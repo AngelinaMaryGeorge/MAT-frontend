@@ -89,8 +89,8 @@
 
 .hero-grid {
             display: grid;
-            grid-template-columns: minmax(40px, .6fr) minmax(300px, 0.30fr);
-            gap:55px;
+            grid-template-columns: minmax(40px, .65fr) minmax(300px, 0.30fr);
+            gap: 55px;
             align-items: center;
         }
 
