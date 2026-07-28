@@ -1,0 +1,189 @@
+.hero {
+            padding: 78px 0 42px;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+.hero-title-image {
+            display: block;
+            width: min(100%, 520px);
+            margin: 1rem 0 1.25rem;
+            filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.32));
+            border-radius: 24px;
+            object-fit: contain;
+        }
+
+.hero-title-image {
+            display: block;
+            width: min(100%, 460px);
+            margin: 1rem 0 1.25rem;
+            filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.28));
+            border-radius: 24px;
+            object-fit: contain;
+        }
+
+.hero-copy {
+            padding: 28px 0;
+        }
+
+.eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            padding: 10px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+.eyebrow::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--red), var(--blue));
+            box-shadow: 0 0 18px rgba(226, 54, 54, 0.55);
+        }
+
+.hero-card,
+.sponsor-rail {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(140px, 1fr));
+            gap: 14px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+        }
+
+.sponsor-rail::-webkit-scrollbar {
+            height: 8px;
+        }
+
+.sponsor-rail::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.16);
+            border-radius: 999px;
+        }
+
+.hero-card {
+    position: relative;
+    padding: 22px;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, rgba(14, 11, 39, 0.92), rgba(25, 9, 16, 0.88));
+    border: 1px solid rgba(41, 5, 5, 0.08);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+    margin-top: -40px; 
+}
+
+.hero-card-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px; 
+    width: 100%;
+}
+
+.hero-grid {
+            display: grid;
+            grid-template-columns: minmax(40px, .6fr) minmax(300px, 0.30fr);
+            gap:55px;
+            align-items: center;
+        }
+
+.hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 24px 0 0;
+        }
+
+.meta-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text);
+        }
+
+.meta-pill span {
+            color: var(--muted);
+        }
+
+.lead {
+            max-width: 62ch;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.9vw, 1.12rem);
+            line-height: 1.75;
+            margin: 0 0 16px;
+        }
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forces exactly two equal-width columns */
+    gap: 14px;
+    width: 100%;
+}
+
+.stat {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; /* Stretches the stat boxes to fill the grid columns evenly */
+}
+
+.stat .value {
+    display: block;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.stat .label {
+    color: var(--muted);
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+.scribble {
+    width: 60px;
+    height: 60px;
+    border-radius: 999px;
+    background: 
+        radial-gradient(circle at 48% 40%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0) 18%),
+        linear-gradient(135deg, var(--red), var(--blue));
+    position: relative;
+    flex: 0 0 auto;
+    box-shadow: 0 8px 20px rgba(226, 54, 54, 0.25); 
+}
+
+.scribble::before,
+.scribble::after {
+    content: "";
+    position: absolute;
+    inset: 10px; 
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 999px;
+}
+
+.scribble::after {
+    inset: 18px;
+    opacity: 0.65;
+}

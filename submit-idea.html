@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Idea | Make-A-Ton Vol 9</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/hero.css">
+    <link rel="stylesheet" href="assets/sections.css">
+    <link rel="stylesheet" href="assets/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-shell">
+        <div class="ambient-orb orb-red" aria-hidden="true"></div>
+        <div class="ambient-orb orb-blue" aria-hidden="true"></div>
+
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html#home" aria-label="Make-A-Ton home">
+                    <div class="brand-mark" aria-hidden="true"></div>
+                    <div class="brand-copy">
+                        <strong>MAKE-A-TON Vol 9</strong>
+                        <span>South India's largest hackathon</span>
+                    </div>
+                </a>
+                <nav class="nav-links" aria-label="Page sections">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#prizes">Prizes</a>
+                    <a href="index.html#faq">FAQ</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container submit-idea-page">
+    <section class="section-card submit-idea-card">
+        <div class="section-head submit-idea-head">
+            <div>
+                <div class="section-kicker">Portal</div>
+                <h2>Submit Your Idea</h2>
+            </div>
+            <p>Fill out the details below to register your team's project proposal for Make-A-Ton Vol 9.</p>
+        </div>
+
+        <form id="ideaForm" class="submit-idea-form">
+    <div class="submit-idea-grid">
+    <div>
+        <label class="submit-idea-label" for="teamName">Team Name</label>
+        <input id="teamName" class="submit-idea-input" type="text" placeholder="e.g., Web-Slingers" required>
+    </div>
+
+    <div>
+        <label class="submit-idea-label" for="leadEmail">Lead Email</label>
+        <input id="leadEmail" class="submit-idea-input" type="email" placeholder="leader@college.edu" required>
+    </div>
+
+    <div>
+        <label class="submit-idea-label" for="projectTitle">Project Title</label>
+        <input id="projectTitle" class="submit-idea-input" type="text" placeholder="What are you building?" required>
+    </div>
+
+    <div>
+        <label class="submit-idea-label" for="track">Select Track</label>
+        <select id="track" class="submit-idea-input submit-idea-select" required>
+            <option value="" disabled selected>Choose your domain...</option>
+            <option value="software">Software & Web/App Development</option>
+            <option value="hardware">Hardware & Prototyping</option>
+            <option value="ai">AI / Machine Learning</option>
+            <option value="cusat">Hack for CUSAT</option>
+        </select>
+    </div>
+</div>
+
+<div>
+    <label class="idea-form-label" for="ideaAbstract">Idea Abstract / Pitch</label>
+    <textarea
+        id="ideaAbstract"
+        class="idea-form-textarea"
+        placeholder="Briefly describe the problem you're solving and your proposed solution..."
+        required
+    ></textarea>
+</div>
+
+<button class="btn btn-primary idea-form-submit" type="submit">Submit Proposal</button>
+
+<div id="successMsg" class="idea-success-message">
+    <i class="fa-solid fa-circle-check idea-success-icon"></i>
+    <h3 class="idea-success-title">Idea Submitted Successfully!</h3>
+    <p class="lead idea-success-copy">
+        Your proposal has been logged into the Make-A-Ton network. Check your inbox soon for confirmation details.
+    </p>
+    <a class="btn btn-secondary" href="index.html">Back to Home</a>
+</div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Simple frontend script to toggle form view into a success state on submit
+        document.getElementById('ideaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

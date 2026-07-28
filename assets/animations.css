@@ -1,0 +1,107 @@
+.ambient-orb {
+            position: fixed;
+            border-radius: 999px;
+            filter: blur(12px);
+            opacity: 0.3;
+            pointer-events: none;
+            animation: drift 18s ease-in-out infinite alternate;
+        }
+
+.orb-red {
+            top: 10vh;
+            left: -80px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(226, 54, 54, 0.95), transparent 68%);
+        }
+
+.orb-blue {
+            right: -70px;
+            top: 38vh;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(47, 108, 255, 0.9), transparent 68%);
+            animation-delay: -7s;
+        }
+
+@keyframes drift {
+            from { transform: translate3d(0, 0, 0) scale(1); }
+            to { transform: translate3d(16px, -24px, 0) scale(1.06); }
+        }
+
+.reveal {
+            opacity: 0;
+            transform: translateY(34px);
+            transition: opacity 700ms ease, transform 700ms ease;
+        }
+
+.reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+.web-overlay {
+            position: absolute;
+            width: min(330px, 38vw);
+            height: auto;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.06;
+            mix-blend-mode: screen;
+            filter: blur(0.2px);
+        }
+
+.web-top-left {
+            top: -20px;
+            left: -20px;
+        }
+
+.web-bottom-right {
+            bottom: -20px;
+            right: -20px;
+            transform: rotate(180deg);
+        }
+
+.ghost-overlay[data-variant="intro"] {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 540'><g fill='none' stroke='%23ffffff' stroke-opacity='0.08' stroke-width='12' stroke-linecap='round'><path d='M270 10C150 40 70 130 70 222c0 111 95 204 200 308 105-104 200-197 200-308 0-92-80-182-200-212z'/><path d='M270 30C180 50 110 116 110 222c0 104 85 189 160 262 75-73 160-158 160-262 0-106-70-172-160-192z'/><path d='M270 220l0 240M130 220l280 0M170 150l200 0M200 280l140 0'/></g></svg>");
+            background-position: left center;
+            background-size: 220%;
+        }
+
+.ghost-overlay[data-variant="prizes"] {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 360'><g fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='10' stroke-linecap='round'><path d='M240 20 L240 340M40 180 L440 180M120 80 L360 280M360 80 L120 280M180 40 L300 320'/></g></svg>");
+            background-position: center right;
+            background-size: 190%;
+        }
+
+.ghost-overlay[data-variant="sponsors"] {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 460 460'><g fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='10'><circle cx='230' cy='230' r='120'/><circle cx='230' cy='230' r='180'/><path d='M230 50 L230 410M50 230 L410 230M120 120 L340 340M340 120 L120 340'/></g></svg>");
+            background-position: bottom left;
+        }
+
+
+.ghost-overlay[data-variant="hardware"] {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 360'><g fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='12' stroke-linecap='round'><path d='M80 280L250 60 430 280M100 240H420M180 120L340 300'/></g></svg>");
+            background-position: center center;
+            background-size: 200%;
+        }
+
+.ghost-overlay[data-variant="why-join"] {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 420'><g fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='10'><path d='M140 60C100 120 100 240 140 312c40 72 104 104 200 104s160-32 200-104c40-72 40-192 0-252s-104-68-200-68-160 10-200 108z'/><path d='M140 60L420 360M420 60L140 360'/></g></svg>");
+            background-position: top right;
+            background-size: 220%;
+        }
+
+.ghost-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 1100ms ease, transform 1100ms ease;
+            z-index: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 170%;
+            filter: blur(0.7px);
+        }
