@@ -78,6 +78,34 @@
             .desktop-only {
                 display: none;
             }
+
+            .contact-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 16px;
+
+    -ms-overflow-style: none; /* legacy Edge / IE */
+}
+
+.contact-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge Chromium */
+}
+
+@supports (scrollbar-width: auto) {
+    .contact-grid {
+        scrollbar-width: none; /* Firefox */
+    }
+}
+
+            .contact-card {
+                flex: 0 0 85% !important;
+                min-width: 85% !important; 
+                scroll-snap-align: center;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
