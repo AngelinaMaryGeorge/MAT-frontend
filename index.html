@@ -392,6 +392,32 @@
             document.getElementById('contactSuccess').style.display = 'block'; // Reveals the success screen
         });
 
+        // Mobile Scroll Hint Animation for Contact Section
+        const contactGrid = document.querySelector('.contact-grid');
+        let hasHinted = false; //only once
+
+        if (contactGrid) {
+            const scrollHintObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Check if -->on the screen, hasn't animated yet, and is on a mobile-sized window
+                    if (entry.isIntersecting && !hasHinted && window.innerWidth <= 768) {
+                        hasHinted = true;
+                        
+                        // Wait 1 second after it appears, then slide right
+                        setTimeout(() => {
+                            contactGrid.scrollBy({ left: 120, behavior: 'smooth' });
+                            
+                            // Wait a fraction of a second, then slide back to original position
+                            setTimeout(() => {
+                                contactGrid.scrollBy({ left: -120, behavior: 'smooth' });
+                            }, 500); 
+                        }, 1000);
+                    }
+                });
+            }, { threshold: 0.5 }); // Triggers when 50% of the contact section is visible
+
+            scrollHintObserver.observe(contactGrid);
+        }
     </script>
 </body>
 </html>
