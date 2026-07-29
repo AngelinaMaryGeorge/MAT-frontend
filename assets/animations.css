@@ -128,52 +128,135 @@
     background-repeat: no-repeat;
     background-position: center bottom; /* Keeps anchored properly */
     
-    animation: spideyStory 8s infinite; 
+    animation: spideyStory 5s infinite; 
 }
 
 /* SPREAD OUT THE POSITIONS */
 @keyframes spideyStory {
     /* hang down */
     0% {
-        background-image: url('hang2.png');
+        background-image: url('hang1.png');
         top: -180px; 
-        left: 15px;
+        left: -50px;
         opacity: 0;
     }
-    15% {
-        background-image: url('hang2.png');
+    35% {
+        background-image: url('hang1.png');
         top: -120px; 
-        left: 15px;
+        left: -50px;
         opacity: 1; 
     }
-    30% {
-        background-image: url('hang2.png');
-        top: -73px;
-        left: 20px;
+    50% {
+        background-image: url('hang1.png');
+        top: -65px;
+        left: -45px;
         opacity: 1;
     }
 
     /* hide time */
-    31%, 45% { 
+    55%, 65% { 
         opacity: 0; 
     }
 
     /* peek out */
-    48% {
-        background-image: url('peek2.png');
+    66% {
+        background-image: url('peek1.png');
         top: -98px; /* Shifted up to sit on the top border */
-        left: 15px;
+        left: -55px;
         opacity: 1;
     }
-    90% {
-        background-image: url('peek2.png');
+    95% {
+        background-image: url('peek1.png');
         top: -98px;
-        left: 15px;
+        left: -55px;
         opacity: 1;
     }
-    
+
+   
     96%,100% { 
         opacity: 0; 
     }
 
+}
+
+
+
+
+/* hanger 2 */
+.spider-hover-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Keep the button in front */
+.spider-hover-wrapper .btn {
+    position: relative;
+    z-index: 5; 
+}
+
+/* starting position (Hidden behind the button) */
+.spider-hover-animator {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    z-index: -1; 
+    pointer-events: none; 
+    background-image: url('peek2.png'); /* Using peeking frame */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom; 
+    
+    /* Starts lowered and invisible */
+    top: -20px; 
+    left: 15px;
+    opacity: 0;
+    
+    /* bouncy, elastic pop-up effect */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* The Hover Trigger */
+.spider-hover-wrapper:hover .spider-hover-animator {
+    top: -78px; /* Moves up to the resting edge */
+    opacity: 1; 
+}
+
+
+/* Container to keep them attached */
+.spider-footer-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* to keep the footer button in front */
+.spider-footer-wrapper .btn {
+    position: relative;
+    z-index: 5; 
+}
+
+/* The Hanging Spider */
+.spider-footer-animator {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    z-index: -1; /* Tucks him behind the button */
+    pointer-events: none; 
+    background-image: url('hang2.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom; 
+    
+    /* Positioned to dangle right on the top edge */
+    top: -178px; 
+    left: 120px; 
+    
+    /* The swing animation */
+    animation: footerSwing 4s ease-in-out infinite alternate;
+    transform-origin: top center; /* Ensures he swings from the web, not the bottom of the box */
+}
+
+/* The Gentle Sway */
+@keyframes footerSwing {
+    0% { transform: rotate(-6deg); }
+    100% { transform: rotate(6deg); }
 }

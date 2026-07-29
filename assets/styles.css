@@ -628,3 +628,43 @@
     object-fit: contain;
     border-radius: 50%;
 }
+
+
+
+
+.hero-title {
+    font-family: 'Orbitron', cursive;
+    font-size: 4rem; 
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.title-spider-logo {
+    height: 1em; 
+    width: auto;
+}
+
+
+
+.event-chip strong {
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 1.3rem; /*size*/
+    letter-spacing: 1px; /*optional spacing */
+}
+.hero-card-logo {
+    width: 100px; /* to make the spider logo bigger or smaller */
+    height: 100px; /* Keep this the same as the width to maintain a perfect square/circle */
+    object-fit: contain; /* Prevents the image from stretching weirdly */
+    margin-bottom: 12px; /* a little breathing room between the logo and the text */
+}
+
+
+
+
+
+.brand-logo {
+    width: 36px; /* A standard size for nav bar logos, adjust as needed */
+    height: 36px;
+    object-fit: contain;
+}
