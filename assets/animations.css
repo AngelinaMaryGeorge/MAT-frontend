@@ -105,3 +105,75 @@
             background-size: 170%;
             filter: blur(0.7px);
         }
+
+
+.spider-button-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.spider-button-wrapper .btn {
+    position: relative;
+    z-index: 5; 
+}
+
+
+.spider-animator {
+    position: absolute;
+    width: 179px;  
+    height: 179px; 
+    z-index: 1;
+    pointer-events: none; /*no click-blocking*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom; /* Keeps anchored properly */
+    
+    animation: spideyStory 8s infinite; 
+}
+
+/* SPREAD OUT THE POSITIONS */
+@keyframes spideyStory {
+    /* hang down */
+    0% {
+        background-image: url('hang2.png');
+        top: -180px; 
+        left: 15px;
+        opacity: 0;
+    }
+    15% {
+        background-image: url('hang2.png');
+        top: -120px; 
+        left: 15px;
+        opacity: 1; 
+    }
+    30% {
+        background-image: url('hang2.png');
+        top: -73px;
+        left: 20px;
+        opacity: 1;
+    }
+
+    /* hide time */
+    31%, 45% { 
+        opacity: 0; 
+    }
+
+    /* peek out */
+    48% {
+        background-image: url('peek2.png');
+        top: -98px; /* Shifted up to sit on the top border */
+        left: 15px;
+        opacity: 1;
+    }
+    90% {
+        background-image: url('peek2.png');
+        top: -98px;
+        left: 15px;
+        opacity: 1;
+    }
+    
+    96%,100% { 
+        opacity: 0; 
+    }
+
+}
