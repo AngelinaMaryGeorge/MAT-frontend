@@ -633,12 +633,13 @@
 
 
 .hero-title {
-    font-family: 'Russo One', cursive;
-    font-size: 4rem; 
+    font-family: 'Rajdhani', sans-serif; 
+    font-size: clamp(2.2rem, 8vw, 4.5rem); 
     text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 4px;
+    white-space: nowrap; 
 }
 .title-spider-logo {
     height: 1em; 
