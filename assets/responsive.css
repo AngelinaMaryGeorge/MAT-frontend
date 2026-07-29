@@ -80,10 +80,10 @@
             }
 
             .contact-grid {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     gap: 16px;
     padding-bottom: 16px;
@@ -102,8 +102,8 @@
 }
 
             .contact-card {
-                flex: 0 0 85% !important;
-                min-width: 85% !important; 
+                flex: 0 0 85% ;
+                min-width: 85% ; 
                 scroll-snap-align: center;
             }
         }
@@ -194,5 +194,15 @@
     }
     .mobile-menu-btn.open .hamburger-line:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-copy span {
+        display: none; 
+    }
+    
+    .brand-copy strong {
+        font-size: 1.2rem; 
     }
 }

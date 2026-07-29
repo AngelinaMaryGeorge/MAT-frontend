@@ -131,9 +131,10 @@
         }
 
         .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center!important;
+            justify-content: space-between!important;
             gap: 16px;
             padding: 16px 0;
         }
@@ -141,7 +142,7 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
         }
 
@@ -673,10 +674,9 @@
 
 
 .header-inner {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    flex-wrap: nowrap; 
-    position: relative; 
+    display: flex ;
+    flex-direction: row ;
+    justify-content: space-between ;
+    align-items: center ;
     width: 100%;
 }
