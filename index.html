@@ -24,23 +24,31 @@
         <div class="ambient-orb orb-blue" aria-hidden="true"></div>
 
         <header class="site-header">
-            <div class="container header-inner">
-                <a class="brand" href="#home" aria-label="Make-A-Ton home">
-    <img class="brand-logo" src="assets/logo.png" alt="Make-A-Ton Logo">
-    <div class="brand-copy">
-        <strong>MAKE-A-TON 9.0</strong>
-        <span>South India's largest hackathon</span>
-    </div>
-</a>
-                <nav class="nav-links" aria-label="Page sections">
-                    <a href="#intro">About</a>
-                    <a href="#prizes">Prizes</a>
-                    <a href="#sponsors">Sponsors</a>
-                    <a href="#faq">FAQ</a>
-                    <a href="#contact">Contact</a>
-                </nav>
+    <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Make-A-Ton home">
+            <img class="brand-logo" src="assets/logo.png" alt="Make-A-Ton Logo">
+            <div class="brand-copy">
+                <strong>MAKE-A-TON 9.0</strong>
+                <span>South India's largest hackathon</span>
             </div>
-        </header>
+        </a>
+        
+        <!-- Hamburger Button (Hidden on Desktop) -->
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="nav-links" aria-label="Page sections">
+            <a href="#intro">About</a>
+            <a href="#prizes">Prizes</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
 
         <main id="home" class="container">
             <section class="hero reveal">
@@ -438,6 +446,25 @@
 
             scrollHintObserver.observe(contactGrid);
         }
+
+    
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const menuItems = document.querySelectorAll('.nav-links a');
+
+    // Toggle menu open/close when clicking the hamburger
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        menuBtn.classList.toggle('open');
+    });
+
+    // Automatically close the menu when a link is clicked
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuBtn.classList.remove('open');
+        });
+    });
     </script>
 </body>
 </html>

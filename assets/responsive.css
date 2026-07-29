@@ -92,7 +92,7 @@
 }
 
 .contact-grid::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge Chromium */
+    display: none; 
 }
 
 @supports (scrollbar-width: auto) {
@@ -122,5 +122,77 @@
         @media (max-width: 640px) {
     .submit-idea-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* --- Desktop Default (Hidden Button) --- */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100; /* Keeps the button above the menu */
+}
+
+/* The 3 white lines */
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #ffffff; /* Standard white, adjust if needed */
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+/* --- Mobile Breakpoint --- */
+@media (max-width: 768px) {
+    /* Show the hamburger button */
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Hide and restyle the links for a dropdown menu */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Drops right below the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(15, 23, 42, 0.95); /*dark glass background */
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        text-align: center;
+        
+        /* The slide-down animation settings */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+    }
+
+    /* Spacing out the links for fat thumbs */
+    .nav-links a {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 1.2rem;
+    }
+
+    /* When JavaScript adds the 'open' class, the menu slides down */
+    .nav-links.open {
+        max-height: 400px; /* Expands the menu */
+    }
+
+  
+    .mobile-menu-btn.open .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-menu-btn.open .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-btn.open .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
