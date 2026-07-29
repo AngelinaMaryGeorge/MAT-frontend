@@ -669,3 +669,14 @@
     height: 36px;
     object-fit: contain;
 }
+
+
+
+.header-inner {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: nowrap; 
+    position: relative; 
+    width: 100%;
+}
